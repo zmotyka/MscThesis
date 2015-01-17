@@ -1,0 +1,22 @@
+{
+  "name": "cornerstone-app",
+  "version": "0.0.0",
+  "dependencies": {
+    "angular": "*",
+    "angular-resource": "*",
+    "angular-cookies": "*",
+    "angular-sanitize": "*",
+    "angular-route": "*",
+    "angular-animate": "*",
+    "angular-bootstrap": "*",
+    "angular-ui-router": "*",
+    "jquery": "*",
+    "modernizr": "*",
+    "cornerstone": "~0.6.1"
+  },
+  "devDependencies": {
+    "angular-mocks": "*",
+    "angular-scenario": "*"
+  },
+  "overrides": {}
+}
