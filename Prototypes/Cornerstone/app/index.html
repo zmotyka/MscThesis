@@ -15,7 +15,7 @@
     <h1>Welcome to Boom Angular.js Generator!</h1>
 
     <div id="dicomImage" style="width:512px;height:512px;"></div>
-
+<!-- <img src="img/CT010001.jpg" id="test-image"> -->
     <div ng-view></div>
     
     <!--<script type="text/javascript" src="http://code.stephenmorley.org/javascript/finding-the-memory-usage-of-objects/sizeof.js"></script>-->
@@ -28,16 +28,13 @@
         var element = $('#dicomImage').get(0);
         cornerstone.enable(element);
 
-        var imageIds = [
-            'example://0',
-            'example://1'];
-
         var currentImageIndex = 0;
 
         // show image #1 initially
         function updateTheImage(imageIndex) {
             currentImageIndex = imageIndex;
-            cornerstone.loadImage(imageIds[currentImageIndex])
+            cornerstone.loadImage('base64://' + currentImageIndex)
+            // cornerstone.loadImage('example://' + currentImageIndex)
               .then(function(image) {
                   console.log('before displayImage');
                   cornerstone.displayImage(element, image);
@@ -50,14 +47,19 @@
             // Firefox e.originalEvent.detail > 0 scroll back, < 0 scroll forward
             // chrome/safari e.originalEvent.wheelDelta < 0 scroll back, > 0 scroll forward
             if (e.originalEvent.wheelDelta < 0 || e.originalEvent.detail > 0) {
-                if (currentImageIndex == 0) {
-                    updateTheImage(1);
-                }
+                currentImageIndex += 1;
+                // if (currentImageIndex == 0) {
+                //     updateTheImage(1);
+                // }
             } else {
-                if (currentImageIndex == 1) {
-                    updateTheImage(0);
+                if (currentImageIndex > 0){
+                  currentImageIndex -= 1;
                 }
+                // if (currentImageIndex == 1) {
+                //     updateTheImage(0);
+                // }
             }
+            updateTheImage(currentImageIndex);
             //prevent page fom scrolling
             return false;
         });

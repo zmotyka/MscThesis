@@ -6,7 +6,8 @@
     	self.imageSeries = [];
 		
 		var provider = {
-			getImage: getImage
+			getImage: getImage,
+			getImageCount: getImageCount
 		};
 
 		return provider;
@@ -36,10 +37,20 @@
 			return deferred;
 		}
 
+		function getImageCount() {
+			return self.imageSeries.length;
+		}
+
 		function loadImages(){
 			return $.ajax({
-				url: '/data/images.json',
-				cache: false
+				url: '/data/images_old.json',
+				cache: false,
+				error: function (request, status, error) {
+			        console.log('ajax error');
+			        console.log(request);
+			        console.log(status);
+			        console.log(error);
+			    }
 			});
 		}
     };
@@ -59,12 +70,33 @@
         return bufView;
     }
 
+
+    function getBase64Image(img) {
+        // Create an empty canvas element
+        var canvas = document.createElement("canvas");
+        canvas.width = img.width;
+        canvas.height = img.height;
+
+        // Copy the image contents to the canvas
+        var ctx = canvas.getContext("2d");
+        ctx.drawImage(img, 0, 0);
+
+        // Get the data-URL formatted image
+        // Firefox supports PNG and JPEG. You could check img.src to
+        // guess the original format, but be aware the using "image/jpg"
+        // will re-encode the image.
+        var dataURL = canvas.toDataURL("image/png");
+
+        return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+    }
+
     function getPixelDataForBase64(base64PixelData)
     {
         var pixelDataAsString = window.atob(base64PixelData);
         var pixelData = str2ab(pixelDataAsString);
-        console.log('base64 pixelData');
+        // console.log('base64 pixelData');
         // console.log(base64PixelData);
+        // console.log(pixelData);
         // console.log('size: ' + sizeof(base64PixelData));
 
         console.log('pixelData');
@@ -73,28 +105,94 @@
     }
 
     function getExampleImage(imageId) {
-        var width = 256;
-        var height = 256;
+        // var width = 256;
+        // var height = 256;
 
-        var image = {
+        var width = 512;
+        var height = 512;
+        
+        // ct image
+		var image = {
             imageId: imageId,
             minPixelValue : 0,
-            maxPixelValue : 257,
+            maxPixelValue : 4096,
             slope: 1.0,
-            intercept: 0,
-            windowCenter : 127,
-            windowWidth : 256,
+            intercept : -1024,
+            windowCenter : 40,
+            windowWidth : 400,
             render: cornerstone.renderGrayscaleImage,
-            getPixelData: {},//getPixelData,
+            getPixelData: {},
             rows: height,
             columns: width,
             height: height,
             width: width,
             color: false,
-            columnPixelSpacing: .8984375,
-            rowPixelSpacing: .8984375,
+            columnPixelSpacing: 0.67578,
+            rowPixelSpacing: 0.67578,
             sizeInBytes: width * height * 2
         };
+
+        // original 512x512
+        // var image = {
+        //     imageId: imageId,
+        //     minPixelValue : 0,
+        //     maxPixelValue : 4096,
+        //     slope: 1.0,
+        //     intercept : -1024,
+        //     windowCenter : 40,
+        //     windowWidth : 400,
+        //     render: cornerstone.renderGrayscaleImage,
+        //     getPixelData: {},
+        //     rows: height,
+        //     columns: width,
+        //     height: height,
+        //     width: width,
+        //     color: false,
+        //     columnPixelSpacing: 0.67578,
+        //     rowPixelSpacing: 0.67578,
+        //     sizeInBytes: width * height * 2
+        // };
+
+        // original 256x256
+        // var image = {
+        //     imageId: imageId,
+        //     minPixelValue : 0,
+        //     maxPixelValue : 257,
+        //     slope: 1.0,
+        //     intercept: 0,
+        //     windowCenter : 127,
+        //     windowWidth : 256,
+        //     render: cornerstone.renderGrayscaleImage,
+        //     getPixelData: {},
+        //     rows: height,
+        //     columns: width,
+        //     height: height,
+        //     width: width,
+        //     color: false,
+        //     columnPixelSpacing: .8984375,
+        //     rowPixelSpacing: .8984375,
+        //     sizeInBytes: width * height * 2
+        // };
+
+        // var image = {
+        //     imageId: imageId,
+        //     minPixelValue : 0,
+        //     maxPixelValue : 512,
+        //     slope: 1.0,
+        //     intercept: 0,
+        //     windowCenter : 256,
+        //     windowWidth : 512,
+        //     render: cornerstone.renderGrayscaleImage,
+        //     getPixelData: {},//getPixelData,
+        //     rows: height,
+        //     columns: width,
+        //     height: height,
+        //     width: width,
+        //     color: false,
+        //     columnPixelSpacing: 0.9,
+        //     rowPixelSpacing: 0.9,
+        //     sizeInBytes: width * height * 2
+        // };
 
         var deferred = $.Deferred();
 
@@ -105,9 +203,15 @@
 	        	console.log('getImage loaded data');
         		image.getPixelData = function (){
         			console.log('before getPixelDataForBase64');
-    				return getPixelDataForBase64(data);
+                    var testImage = document.getElementById('test-image');
+                    var base64 = getBase64Image(testImage);
+                    return getPixelDataForBase64(base64);
+    				// return getPixelDataForBase64(data);
         		};
         		console.log('image');
+        		var currentlyDisplayingImage = +requestedImageIndex + 1;
+        		console.log('showing: ' + currentlyDisplayingImage + '/' + imageProvider.getImageCount());
+
 	        	deferred.resolve(image);
 	        });
 
