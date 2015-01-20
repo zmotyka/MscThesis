@@ -1,0 +1,11 @@
+Comments:
+
+Workflow
+-- imageProvider
+a) loadImage(imageIndex)
+1. Register ImageLoader 
+cornerstone.registerImageLoader('base64', loadImage)
+-- Initialise list of available images
+2. Implement loadImage(imageId) -> imageProvider.loadImage(imageIndex) deferred
+loadImage(imageId)
+3. 

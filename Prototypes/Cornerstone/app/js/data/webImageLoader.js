@@ -51,7 +51,8 @@
 
 		function loadImages(){
 			return $.ajax({
-				url: '/data/images_jpg.json',
+				url: '/data/images_png_full.json',
+				// url: '/data/images_jpg.json',
 				cache: false,
 				error: function (request, status, error) {
 			        console.log('ajax error');
@@ -64,7 +65,6 @@
     };
 
     var imageProvider = new imageDataProvider();
-
 
     function createImageObject(image, imageId)
     {
@@ -145,7 +145,7 @@
             columns: columns,
             height: rows,
             width: columns,
-            color: true,
+            color: false,
             columnPixelSpacing: 1.0,
             rowPixelSpacing: 1.0,
             invert: false,
@@ -178,9 +178,7 @@
         return deferred;
     }
 
-    // steam the http and https prefixes so we can use standard web urls directly
     cornerstone.registerImageLoader('base64', loadImage);
-    // cornerstone.registerImageLoader('https', loadImage);
 
     return cornerstone;
 }($, cornerstone));
