@@ -1,11 +1,25 @@
 Comments:
 
 Workflow
--- imageProvider
-a) loadImage(imageIndex)
+-- imageDataContext
+a) loadImage(imageIndex) 
 1. Register ImageLoader 
 cornerstone.registerImageLoader('base64', loadImage)
 -- Initialise list of available images
 2. Implement loadImage(imageId) -> imageProvider.loadImage(imageIndex) deferred
 loadImage(imageId)
 3. 
+
+
+ImageDataContext
+ImageExtractor
+
+
+ImageLoader
+	.loadImage('image://1')
+		.ImageManager
+			.getImage(1)
+				.imagePixelData[1]||(load(1)&&=imagePixelData[1])
+					.ImageDataContext
+						.load(1)
+							.imageSeries[1]||query(1)
