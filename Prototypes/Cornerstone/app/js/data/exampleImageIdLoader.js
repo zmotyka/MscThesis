@@ -14,9 +14,7 @@
 
 		function getImage(index){
 			var deferred = $.Deferred();
-
 			var requestedImage = self.imageSeries[index];
-
 			console.log('Requested: ' + index);
 
 			if (requestedImage){

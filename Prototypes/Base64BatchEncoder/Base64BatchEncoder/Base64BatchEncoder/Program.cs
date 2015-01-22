@@ -10,9 +10,9 @@ namespace Base64BatchEncoder
     {
         static void Main(string[] args)
         {
-            var directoryPath = @"D:\DICOM\Starzynski\1074520\1074520_5mm_anonim\JPG";
+            var directoryPath = @"D:\DICOM\Starzynski\1074520\1074520_5mm_anonim\PNG";
             var destinationPath = Path.Combine(directoryPath, "encodedFiles.json");
-            var limitResults = 10;
+            var limitResults = 50;
             GenerateSerializedBase64Data(directoryPath, destinationPath, limitResults);
         }
 
