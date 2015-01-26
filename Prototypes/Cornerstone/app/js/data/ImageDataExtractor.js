@@ -46,7 +46,6 @@
 
         function getImageData(image) {
             console.log('getImageData');
-            console.log(this);
             var context;
             // if(lastImageIdDrawn !== imageId) {
                 this.canvas.height = image.naturalHeight;

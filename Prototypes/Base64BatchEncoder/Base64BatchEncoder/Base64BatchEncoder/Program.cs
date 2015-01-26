@@ -12,7 +12,7 @@ namespace Base64BatchEncoder
         {
             var directoryPath = @"D:\DICOM\Starzynski\1074520\1074520_5mm_anonim\PNG";
             var destinationPath = Path.Combine(directoryPath, "encodedFiles.json");
-            var limitResults = 50;
+            var limitResults = 140;
             GenerateSerializedBase64Data(directoryPath, destinationPath, limitResults);
         }
 
