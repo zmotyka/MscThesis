@@ -12,7 +12,8 @@
     "angular-ui-router": "*",
     "jquery": "*",
     "modernizr": "*",
-    "cornerstone": "~0.6.1"
+    "cornerstone": "~0.6.1",
+    "bootstrap": "~3.3.2"
   },
   "devDependencies": {
     "angular-mocks": "*",

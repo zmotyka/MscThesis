@@ -16,9 +16,9 @@
 			initialise: initialise
 		};
 
-		function initialise(){
+		function initialise(dicomSrc){
 			var that = this;
-			return that.cornerStoneImageLoader.preloadAll()
+			return that.cornerStoneImageLoader.preloadAll(dicomSrc)
 				.then(function (data){
 					console.log('cornerStoneImageLoader.preloadAll: ready');
 					cornerstone.registerImageLoader(that.cornerStoneImageLoader.getName(), createImageLoader);

@@ -6,19 +6,22 @@
 	zen.ImageCacheProvider.prototype = (function(){
 		return {
 			add: add,
-			get: get
+			get: get,
+			clear: clear
 		};
 
 		function add(imageId, imageObject){
 			console.log('ImageCacheProvider.add: ' + imageId);
-			// localStorage.setItem(imageId, imageObject)
 			this.imageObjects[imageId] = imageObject;
 		};
 
 		function get(imageId){
 			console.log('ImageCacheProvider.get: ' + imageId);
-			// return localStorage.getItem(imageId);
 			return this.imageObjects[imageId];
+		};
+
+		function clear(){
+			return this.imageObjects = {};
 		};
 	})();
 })(window.zen = window.zen || {}, jQuery, cornerstone);

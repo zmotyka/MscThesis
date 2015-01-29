@@ -1,18 +1,15 @@
 
-/*================================================================
-=>                  App = cornerstoneApp
-==================================================================*/
-/*global angular*/
-
 var app = angular.module('cornerstoneApp', ["ngCookies", "ngResource", "ngSanitize", "ngRoute", "ngAnimate", "ui.bootstrap", "ui.router"]);
 
-
+// ąpp.value('cornerstone', cornerstone);
 app.config(['$routeProvider', '$locationProvider', '$httpProvider', function ($routeProvider, $locationProvider, $httpProvider) {
 	'use strict';
 
 	$routeProvider
 		.when('/home', {
 			templateUrl: 'templates/home.html'
+			// controller: 'homeCtrl',
+			// controllerAs: 'homeVm',
 		})
 		.otherwise({
 			redirectTo: '/home'

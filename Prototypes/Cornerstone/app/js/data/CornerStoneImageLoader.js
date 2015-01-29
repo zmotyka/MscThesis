@@ -18,29 +18,17 @@
 
 		function create(imageId){
 			console.log('CornerStoneImageLoader.create called! Requested: ' + imageId);
-			// var that = this;
-			var dfd = $.Deferred();
 
+			var dfd = $.Deferred();
 			var image = this.imageCacheProvider.get(imageId);
-			// if (!image){
-			// 	that.imageManager.getImage(imageIndex)
-			// 		.then(function (extractedImageData){
-			// 			return that.cornerStoneImageFactory.create(extractedImageData);
-			// 		})
-			// 		.then(function(loadedImage){
-			// 			that.imageCacheProvider.add(imageId, loadedImage);
-			// 			dfd.resolve(loadedImage);
-			// 		});
-			// } else {
-			// 	console.log('CornerStoneImageLoader: already exists');
-				dfd.resolve(image);
-			// }
+			dfd.resolve(image);
 	        return dfd;
     	};
 
-    	function preloadAll(){
+    	function preloadAll(dicomSrc){
     		var that = this;
-    		return that.imageManager.loadAllImageData()
+    		that.imageCacheProvider.clear();
+    		return that.imageManager.loadAllImageData(dicomSrc)
     			.then(function(imageDeferreds){
 	    			var all = imageDeferreds.map(function (imageDeferred, i) {
 	    				return imageDeferred

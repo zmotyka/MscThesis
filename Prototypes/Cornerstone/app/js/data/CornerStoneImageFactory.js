@@ -7,7 +7,7 @@
 	zen.CornerStoneImageFactory.prototype = (function(){
 		return {
 			create: create
-		};
+		}; 
 
 		function create(imageId, extractedImageData){
 			var that = this;
@@ -46,10 +46,6 @@
 
 	        function getCanvas(){
 
-	            // if(lastImageIdDrawn === imageId) {
-	            //     return canvas;
-	            // }
-	        	// var canvas = document.createElement("canvas");
 	    		var image = extractedImageData.image;
 	            that.canvas.height = extractedImageData.image.naturalHeight;
 	            that.canvas.width = extractedImageData.image.naturalWidth;

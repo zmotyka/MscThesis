@@ -1,0 +1,52 @@
+<!-- <input id="series-slider" type="range" min="0" max="49" step="1" value="0"
+	oninput="homeVm.updateTheImage(this.value)" onchange="homeVm.updateTheImage(this.value)"/>
+    
+<div id="dicomImage" style="width:512px;height:512px;"></div>
+
+<script type="text/javascript">
+	var element = document.getElementById('dicomImage');
+	var currentImageIndex = -1;
+
+	$(document).ready(function() {
+	    var cornerStoneInitialiser = new zen.CornerStoneInitialiser();
+	    cornerStoneInitialiser.initialise()
+	        .then(function(){
+	            console.log('cornerStoneInitialiser done');
+	            cornerstone.enable(element);
+	            updateTheImage(0);
+	        });
+
+	    $('#dicomImage').on('mousewheel DOMMouseScroll', function (e) {
+	        var newImageIndex = 0;
+	        // Firefox e.originalEvent.detail > 0 scroll back, < 0 scroll forward
+	        // chrome/safari e.originalEvent.wheelDelta < 0 scroll back, > 0 scroll forward
+	        if (e.originalEvent.wheelDelta < 0 || e.originalEvent.detail > 0) {
+	            newImageIndex = currentImageIndex + 1;
+	        } else {
+	            if (currentImageIndex > 0){
+	              newImageIndex = currentImageIndex - 1;
+	            }
+	        }
+	        console.log('currentImageIndex changed: ' + newImageIndex);
+	        updateTheImage(newImageIndex);
+	        //prevent page fom scrolling
+	        return false;
+	    });
+
+
+	});
+	  function updateTheImage(imageIndex) {
+	      if (currentImageIndex === imageIndex){
+	          console.log('updateTheImage not needed');
+	          return;
+	      }
+	      console.log('updateTheImage: ' + imageIndex);
+	      currentImageIndex = imageIndex;
+	      cornerstone.loadImage('base64://' + currentImageIndex)
+	        .then(function(image) {
+	            console.log('before displayImage');
+	            cornerstone.displayImage(element, image);
+	        });
+	  };
+	</script>
+ -->
