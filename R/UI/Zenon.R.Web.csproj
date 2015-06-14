@@ -1,0 +1,377 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F1FFB481-0416-403E-8280-3D8E2B80CA3A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Zenon.R.Web</RootNamespace>
+    <AssemblyName>Zenon.R.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="app\app.module.js" />
+    <Content Include="app\core\apiProxy\_module.js" />
+    <Content Include="app\core\cache\htmlCacheBusterHttpInterceptor.js" />
+    <Content Include="app\core\cache\_module.js" />
+    <Content Include="app\core\common.js" />
+    <Content Include="app\core\config.js" />
+    <Content Include="app\core\constants.js" />
+    <Content Include="app\core\exception\exception.js" />
+    <Content Include="app\core\exception\exceptionConfigProvider.js" />
+    <Content Include="app\core\exception\_module.js" />
+    <Content Include="app\core\logger\logger.js" />
+    <Content Include="app\core\logger\_module.js" />
+    <Content Include="app\core\router\routeHelperConfig.js" />
+    <Content Include="app\core\router\routeHelper.js" />
+    <Content Include="app\core\router\_module.js" />
+    <Content Include="app\core\_configuration.js" />
+    <Content Include="app\core\_module.js" />
+    <Content Include="app\core\apiProxy\_proxies.js" />
+    <Content Include="app\css\badgets_labels.css">
+      <DependentUpon>badgets_labels.less</DependentUpon>
+    </Content>
+    <Content Include="app\css\badgets_labels.min.css">
+      <DependentUpon>badgets_labels.less</DependentUpon>
+    </Content>
+    <Content Include="app\css\base.css">
+      <DependentUpon>base.less</DependentUpon>
+    </Content>
+    <Content Include="app\css\base.min.css">
+      <DependentUpon>base.less</DependentUpon>
+    </Content>
+    <Content Include="app\css\buttons.css">
+      <DependentUpon>buttons.less</DependentUpon>
+    </Content>
+    <Content Include="app\css\buttons.min.css">
+      <DependentUpon>buttons.less</DependentUpon>
+    </Content>
+    <Content Include="app\css\custom.css">
+      <DependentUpon>custom.less</DependentUpon>
+    </Content>
+    <Content Include="app\css\custom.min.css">
+      <DependentUpon>custom.less</DependentUpon>
+    </Content>
+    <Content Include="app\css\elements.css">
+      <DependentUpon>elements.less</DependentUpon>
+    </Content>
+    <Content Include="app\css\elements.min.css">
+      <DependentUpon>elements.less</DependentUpon>
+    </Content>
+    <Content Include="app\css\google-font.css">
+      <DependentUpon>google-font.less</DependentUpon>
+    </Content>
+    <Content Include="app\css\google-font.min.css">
+      <DependentUpon>google-font.less</DependentUpon>
+    </Content>
+    <Content Include="app\css\index.css">
+      <DependentUpon>index.less</DependentUpon>
+    </Content>
+    <Content Include="app\css\index.min.css">
+      <DependentUpon>index.less</DependentUpon>
+    </Content>
+    <Content Include="app\css\media.css">
+      <DependentUpon>media.less</DependentUpon>
+    </Content>
+    <Content Include="app\css\media.min.css">
+      <DependentUpon>media.less</DependentUpon>
+    </Content>
+    <Content Include="app\css\mixins.css">
+      <DependentUpon>mixins.less</DependentUpon>
+    </Content>
+    <Content Include="app\css\mixins.min.css">
+      <DependentUpon>mixins.less</DependentUpon>
+    </Content>
+    <Content Include="app\css\modules\home.css">
+      <DependentUpon>home.less</DependentUpon>
+    </Content>
+    <Content Include="app\css\modules\home.min.css">
+      <DependentUpon>home.less</DependentUpon>
+    </Content>
+    <Content Include="app\css\modules\page-report.css">
+      <DependentUpon>page-report.less</DependentUpon>
+    </Content>
+    <Content Include="app\css\modules\page-report.min.css">
+      <DependentUpon>page-report.less</DependentUpon>
+    </Content>
+    <Content Include="app\css\navigation.css">
+      <DependentUpon>navigation.less</DependentUpon>
+    </Content>
+    <Content Include="app\css\navigation.min.css">
+      <DependentUpon>navigation.less</DependentUpon>
+    </Content>
+    <Content Include="app\css\pages.css">
+      <DependentUpon>pages.less</DependentUpon>
+    </Content>
+    <Content Include="app\css\pages.min.css">
+      <DependentUpon>pages.less</DependentUpon>
+    </Content>
+    <Content Include="app\css\rtl.css">
+      <DependentUpon>rtl.less</DependentUpon>
+    </Content>
+    <Content Include="app\css\rtl.min.css">
+      <DependentUpon>rtl.less</DependentUpon>
+    </Content>
+    <Content Include="app\css\sidebar.css">
+      <DependentUpon>sidebar.less</DependentUpon>
+    </Content>
+    <Content Include="app\css\sidebar.min.css">
+      <DependentUpon>sidebar.less</DependentUpon>
+    </Content>
+    <Content Include="app\css\skins.css">
+      <DependentUpon>skins.less</DependentUpon>
+    </Content>
+    <Content Include="app\css\skins.min.css">
+      <DependentUpon>skins.less</DependentUpon>
+    </Content>
+    <Content Include="app\css\style.css">
+      <DependentUpon>style.less</DependentUpon>
+    </Content>
+    <Content Include="app\css\style.min.css">
+      <DependentUpon>style.less</DependentUpon>
+    </Content>
+    <Content Include="app\css\typography.css">
+      <DependentUpon>typography.less</DependentUpon>
+    </Content>
+    <Content Include="app\css\typography.min.css">
+      <DependentUpon>typography.less</DependentUpon>
+    </Content>
+    <Content Include="app\css\variables.css">
+      <DependentUpon>variables.less</DependentUpon>
+    </Content>
+    <Content Include="app\css\variables.min.css">
+      <DependentUpon>variables.less</DependentUpon>
+    </Content>
+    <Content Include="app\css\vendor.css">
+      <DependentUpon>vendor.less</DependentUpon>
+    </Content>
+    <Content Include="app\css\vendor.min.css">
+      <DependentUpon>vendor.less</DependentUpon>
+    </Content>
+    <Content Include="app\img\progress-bar-50x8.gif" />
+    <Content Include="app\img\spinner-navy-bg-16x16.gif" />
+    <Content Include="app\img\patterns\header-profile.png" />
+    <Content Include="app\img\patterns\shattered.png" />
+    <Content Include="app\modules\common\directives\layout\cm-layout-minimize-sidebar.html" />
+    <Content Include="app\modules\common\directives\layout\cm-layout-minimize-sidebar.js" />
+    <Content Include="app\modules\common\directives\layout\cm-layout-side-navigation.js" />
+    <Content Include="app\modules\common\directives\layout\cm-layout-side-navigation.html" />
+    <Content Include="app\modules\common\directives\progress\cm-progress-bar.html" />
+    <Content Include="app\modules\common\directives\progress\cm-progress-bar.js" />
+    <Content Include="app\modules\common\home\homeCtrl.js" />
+    <Content Include="app\index.html" />
+    <Content Include="app\modules\common\home\_route.js" />
+    <Content Include="app\modules\common\main\footer.html" />
+    <Content Include="app\modules\common\main\shell.html" />
+    <Content Include="app\modules\common\main\topnavbar.html" />
+    <Content Include="app\modules\common\main\_route.js" />
+    <Content Include="app\modules\common\_module.js" />
+    <Content Include="app\modules\seo\pageReport\grid\seoprDeltaClassProvider.js" />
+    <Content Include="app\modules\seo\pageReport\grid\_unitTests\seopr-page-report-date-range-toggle-tests.js" />
+    <Content Include="app\modules\seo\pageReport\seopr-page-report-selector.html" />
+    <Content Include="app\modules\seo\pageReport\seopr-page-report-selector.js" />
+    <Content Include="app\modules\seo\pageReport\grid\seoprGridDataSource.js" />
+    <Content Include="app\modules\seo\pageReport\grid\seoprGridHelper.js" />
+    <Content Include="app\modules\seo\pageReport\grid\seopr-page-report-grid.html" />
+    <Content Include="app\modules\seo\pageReport\grid\seopr-page-report-grid.js" />
+    <Content Include="app\modules\seo\pageReport\grid\seoprGridFactory.js" />
+    <Content Include="app\modules\seo\pageReport\grid\seopr-page-report-date-range-toggle.html" />
+    <Content Include="app\modules\seo\pageReport\grid\seopr-page-report-date-range-toggle.js" />
+    <Content Include="app\modules\seo\pageReport\grid\seoprGridDefinition.js" />
+    <Content Include="app\modules\seo\pageReport\seopr-page-report-breadcrumb.html" />
+    <Content Include="app\modules\seo\pageReport\seopr-page-report-breadcrumb.js" />
+    <Content Include="app\modules\seo\pageReport\seoprPageReport.html" />
+    <Content Include="app\modules\seo\pageReport\seoprPageReportCtrl.js" />
+    <Content Include="app\modules\seo\pageReport\seoprPageReportService.js" />
+    <Content Include="app\modules\seo\pageReport\seoprRequestAdapter.js" />
+    <Content Include="app\modules\seo\pageReport\seoprReportMode.js" />
+    <Content Include="app\modules\seo\pageReport\_route.js" />
+    <Content Include="app\modules\seo\pageReport\_unitTests\seoprRequestAdapterTests.js" />
+    <Content Include="app\modules\seo\home\home.html" />
+    <Content Include="app\modules\seo\home\_route.js" />
+    <Content Include="app\modules\seo\shell\shell.html" />
+    <Content Include="app\modules\seo\shell\_route.js" />
+    <Content Include="app\modules\seo\_module.js" />
+    <Content Include="app\nonAngular\thirdParty\kendo\css\kendo.common.min.css" />
+    <Content Include="app\nonAngular\thirdParty\kendo\css\kendo.dataviz.default.min.css" />
+    <Content Include="app\nonAngular\thirdParty\kendo\css\kendo.dataviz.min.css" />
+    <Content Include="app\nonAngular\thirdParty\kendo\css\kendo.silver.min.css" />
+    <Content Include="app\nonAngular\thirdParty\kendo\css\kendo.silver.mobile.min.css" />
+    <Content Include="app\nonAngular\thirdParty\kendo\css\Silver\editor.png" />
+    <Content Include="app\nonAngular\thirdParty\kendo\css\Silver\imagebrowser.png" />
+    <Content Include="app\nonAngular\thirdParty\kendo\css\Silver\indeterminate.gif" />
+    <Content Include="app\nonAngular\thirdParty\kendo\css\Silver\loading-image.gif" />
+    <Content Include="app\nonAngular\thirdParty\kendo\css\Silver\loading.gif" />
+    <Content Include="app\nonAngular\thirdParty\kendo\css\Silver\loading_2x.gif" />
+    <Content Include="app\nonAngular\thirdParty\kendo\css\Silver\markers.png" />
+    <Content Include="app\nonAngular\thirdParty\kendo\css\Silver\markers_2x.png" />
+    <Content Include="app\nonAngular\thirdParty\kendo\css\Silver\slider-h.gif" />
+    <Content Include="app\nonAngular\thirdParty\kendo\css\Silver\slider-v.gif" />
+    <Content Include="app\nonAngular\thirdParty\kendo\css\Silver\sprite.png" />
+    <Content Include="app\nonAngular\thirdParty\kendo\css\Silver\sprite_2x.png" />
+    <Content Include="app\nonAngular\thirdParty\kendo\css\Silver\sprite_kpi.png" />
+    <Content Include="app\nonAngular\thirdParty\kendo\css\Silver\sprite_kpi_2x.png" />
+    <Content Include="app\nonAngular\thirdParty\kendo\js\kendo.all.min.js" />
+    <Content Include="CodingConventions.txt" />
+    <Content Include="app\fav.ico" />
+    <Content Include="gulpfile.js" />
+    <Content Include="gulp\clean.js" />
+    <Content Include="gulp\artifact.js" />
+    <Content Include="gulp\apiProxy.js" />
+    <Content Include="gulp\build.js" />
+    <Content Include="gulp\configuration.js" />
+    <Content Include="gulp\bundle.js" />
+    <Content Include="gulp\stylesBundle.js" />
+    <Content Include="gulp\scriptsBundle.js" />
+    <Content Include="gulp\indexHtmlBundle.js" />
+    <Content Include="gulp\imageMin.js" />
+    <Content Include="gulp\zip.js" />
+    <Content Include="gulp\server.js" />
+    <Content Include="gulp\test.js" />
+    <Content Include="gulp\copy.js" />
+    <Content Include="gulp\jsHint.js" />
+    <Content Include="gulp\watch.js" />
+    <Content Include="gulp\fonts.js" />
+    <Content Include="karma.conf.js" />
+    <Content Include="lessCompile\index.css" />
+    <Content Include="tests\features\pageObjects\loginPage.js" />
+    <Content Include="tests\features\seo\pageReport\stepDefinitions\page-report-classification.js" />
+    <Content Include="tests\features\seo\pageReport\stepDefinitions\page-report-actual-data-formatting-steps.js" />
+    <Content Include="tests\features\seo\pageReport\stepDefinitions\page-report-drill-up.js" />
+    <Content Include="tests\features\seo\pageReport\stepDefinitions\page-report-drill-down-to-page-level.js" />
+    <Content Include="tests\features\seo\pageReport\stepDefinitions\page-report-drill-down.js" />
+    <Content Include="tests\mocks\pageReportClassificationData.js" />
+    <Content Include="tests\mocks\pageReportData.js" />
+    <Content Include="tests\mocks\loginResponse.js" />
+    <Content Include="tests\protractor.conf.js" />
+    <Content Include="tests\features\seo\pageReport\stepDefinitions\pageObjects\pageReportPage.js" />
+    <Content Include="tests\features\seo\pageReport\stepDefinitions\page-report-weekly-monthly-toggle.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".bowerrc" />
+    <Content Include=".editorconfig" />
+    <Content Include=".jscsrc" />
+    <Content Include=".jshintrc" />
+    <Content Include="bower.json" />
+    <Content Include="package.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".npmrc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app\css\badgets_labels.less" />
+    <Content Include="app\css\base.less" />
+    <Content Include="app\css\buttons.less" />
+    <Content Include="app\css\custom.less" />
+    <Content Include="app\css\elements.less" />
+    <Content Include="app\css\media.less" />
+    <Content Include="app\css\mixins.less" />
+    <Content Include="app\css\navigation.less" />
+    <Content Include="app\css\pages.less" />
+    <Content Include="app\css\rtl.less" />
+    <Content Include="app\css\sidebar.less" />
+    <Content Include="app\css\skins.less" />
+    <Content Include="app\css\style.less" />
+    <Content Include="app\css\typography.less" />
+    <Content Include="app\css\variables.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app\css\vendor.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app\css\index.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app\css\modules\home.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app\configuration.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app\css\google-font.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app\css\modules\page-report.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="tests\features\seo\pageReport\page-report-weekly-monthly-toggle.feature" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="tests\features\seo\pageReport\page-report-drill-down.feature" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="tests\features\seo\pageReport\page-report-drill-up.feature" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="tests\features\seo\pageReport\page-report-actual-data-formatting.feature" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="tests\features\seo\pageReport\page-report-classification.feature" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>53429</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:61249/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

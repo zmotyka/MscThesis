@@ -1,0 +1,57 @@
+﻿
+Core modules don't contain namespace in the feature name!
+The namespace can be a combination of module and feature, e.g. for 'SEO Page Report' it is 'seopr'.
+
+================= FILE NAMING =======================
+
+- Angular module name
+app.[module].[feature]
+e.g. 
+app.seo.home
+app.common.home
+app.common.login
+
+- Controller:
+nmCustomFeatureCtrl.js
+
+- Directive:
+nm-custom-feature.js
+nm-custom-feature.html
+
+- HTML template:
+nmCustomFeature.html
+
+- Service:
+nmCustomFeatureService.js
+
+- Filter:
+nmCustomFeatureFilter.js
+
+- Module structure example:
+schedule
+	_unitTests
+		scScheduleServiceTests.js
+		scScheduleCtrlTests.js
+	_module.js
+	_route.js
+	sc-quick-schedule.js
+	sc-quick-schedule.html
+	scRatingsFilter.js
+	scScheduleService.js
+	scScheduleCtrl.js
+	scSchedule.html
+
+================= BINDING =======================
+
+1. Use 'controllerAs' syntax as much as possible, even in directives
+2. In controller define var 'vm = this;' at the begining
+3. controllerAs value should be set as featureNameVm, without the namespace, e.g. 
+	directive: seoprPageReportDateRangeToggle
+	controller: seoprPageReportDateRangeToggleCtrl
+	controllerAs: pageReportDateRangeToggleVm
+
+
+================= CODING =======================
+1. Strings
+- Use single quotes for strings, e.g, var test = 'test';
+

@@ -1,0 +1,14 @@
+{
+  "name": "jquery.dcaccordion",
+  "homepage": "https://github.com/dillonforrest/jquery.dcaccordion",
+  "_release": "f0747689ec",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "f0747689ec152cf01deb6e22599fd7221c0749da"
+  },
+  "_source": "https://github.com/dillonforrest/jquery.dcaccordion.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/dillonforrest/jquery.dcaccordion.git",
+  "_direct": true
+}

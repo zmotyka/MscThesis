@@ -1,0 +1,17 @@
+{
+	"dev": {
+		"configuration": {
+			"webApiEndpoint": "https://localhost/OneSearch.WebApi"
+		}
+	},
+	"uat": {
+		"configuration": {
+			"webApiEndpoint": "https://webapi-uat.onehydra.com"
+		}
+	},
+	"prod": {
+		"configuration": {
+			"webApiEndpoint": "https://api.onehydra.com"
+		}
+	}
+}

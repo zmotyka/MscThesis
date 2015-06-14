@@ -1,0 +1,30 @@
+{
+  "name": "angular-accounting",
+  "version": "1.0.0",
+  "homepage": "https://github.com/millenjo/angular-accounting",
+  "authors": [
+    "millenjo <millenjo@gmail.com>"
+  ],
+  "description": "Accounting.js wrapper for Angular.js",
+  "main": "angular-accounting.js",
+  "moduleType": [
+    "amd",
+    "globals"
+  ],
+  "keywords": [
+    "accounting",
+    "accountingjs"
+  ],
+  "license": "MIT",
+  "private": false,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "accounting": "~0.3.2"
+  }
+}
