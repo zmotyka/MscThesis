@@ -177,6 +177,7 @@
       <DependentUpon>vendor.less</DependentUpon>
     </Content>
     <Content Include="app\img\progress-bar-50x8.gif" />
+    <Content Include="app\img\r-analyse-logo.png" />
     <Content Include="app\img\spinner-navy-bg-16x16.gif" />
     <Content Include="app\img\patterns\header-profile.png" />
     <Content Include="app\img\patterns\shattered.png" />
@@ -186,6 +187,8 @@
     <Content Include="app\modules\common\directives\layout\cm-layout-side-navigation.html" />
     <Content Include="app\modules\common\directives\progress\cm-progress-bar.html" />
     <Content Include="app\modules\common\directives\progress\cm-progress-bar.js" />
+    <Content Include="app\modules\common\filters\toTrusted.js" />
+    <Content Include="app\modules\common\home\home.html" />
     <Content Include="app\modules\common\home\homeCtrl.js" />
     <Content Include="app\index.html" />
     <Content Include="app\modules\common\home\_route.js" />
@@ -220,6 +223,13 @@
     <Content Include="app\modules\seo\shell\shell.html" />
     <Content Include="app\modules\seo\shell\_route.js" />
     <Content Include="app\modules\seo\_module.js" />
+    <Content Include="app\modules\serverRender\test\srTest.html" />
+    <Content Include="app\modules\serverRender\test\srTestCtrl.js" />
+    <Content Include="app\modules\serverRender\test\srTestService.js" />
+    <Content Include="app\modules\serverRender\test\_route.js" />
+    <Content Include="app\modules\serverRender\shell\shell.html" />
+    <Content Include="app\modules\serverRender\shell\_route.js" />
+    <Content Include="app\modules\serverRender\_module.js" />
     <Content Include="app\nonAngular\thirdParty\kendo\css\kendo.common.min.css" />
     <Content Include="app\nonAngular\thirdParty\kendo\css\kendo.dataviz.default.min.css" />
     <Content Include="app\nonAngular\thirdParty\kendo\css\kendo.dataviz.min.css" />

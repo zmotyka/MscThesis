@@ -1,0 +1,16 @@
+<div class="white-bg">
+
+    <div class="row wrapper page-report-container page-heading">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="m-t-sm m-b-xs">Test server side image rendering</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div ng-bind-html="testVm.svgImg | toTrusted">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

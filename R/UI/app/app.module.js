@@ -21,6 +21,6 @@
          * Add new features here
          */
         
-        'app.seo'
+        'app.serverRender'
     ]);
 })(angular);
