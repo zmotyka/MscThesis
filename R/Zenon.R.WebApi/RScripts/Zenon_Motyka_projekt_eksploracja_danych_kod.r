@@ -44,46 +44,46 @@ showMinMaxMeanSd <- function (rawData, glassData){
 showHistograms <- function (glassData){
 	# ============= Histogramy ======================
 	colors <- c("green")
-	dev.new()
+	 
 	hist(glassData$ri, 60, col = colors)
-	dev.new()
+	 
 	hist(glassData$na, 60, col = colors)
-	dev.new()
+	 
 	hist(glassData$mg, 60, col = colors)
-	dev.new()
+	 
 	hist(glassData$al, 60, col = colors)
-	dev.new()
+	 
 	hist(glassData$si, 60, col = colors)
-	dev.new()
+	 
 	hist(glassData$k, 60, col = colors)
-	dev.new()
+	 
 	hist(glassData$ca, 60, col = colors)
-	dev.new()
+	 
 	hist(glassData$ba, 60, col = colors)
-	dev.new()
+	 
 	hist(glassData$fe, 60, col = colors)
 }
 
 showScatterCharts <- function (glassData){
 	# =============== Wykresy punktowe ================
-	dev.new()
+	 
 	plot(glassData$na, glassData$ri)
-	dev.new()
+	 
 	plot(glassData$mg, glassData$ri)
-	dev.new()
+	 
 	plot(glassData$al, glassData$ri)
-	dev.new()
+	 
 	plot(glassData$si, glassData$ri)
-	dev.new()
+	 
 	plot(glassData$k, glassData$ri)
-	dev.new()
+	 
 	plot(glassData$ca, glassData$ri)
-	dev.new()
+	 
 	plot(glassData$ba, glassData$ri)
-	dev.new()
+	 
 	plot(glassData$fe, glassData$ri)
 
-	dev.new()
+	 
 	pairs(glassData)
 }
 
@@ -91,7 +91,7 @@ showBoxPlotAnalysis <- function(rawGlassData, glassData){
 	# Odstęp międzykwartylowy
 	print(paste('IQR: ', IQR(rawGlassData$szklo)))
 	# Wykres pudełkowy
-	dev.new()
+	 
 	boxplot(glassData)
 }
 
@@ -101,7 +101,7 @@ getOind <- function(value) {
 }
 
 drawOind <- function (x, y, oind){
-	dev.new()
+	 
 	plot(x, y, pch=16,col=oind+1)
 }
 
@@ -164,7 +164,7 @@ getNormalisedData <- function (glassData){
 
 drawCovarianceGrid <- function (normalisedGlassData){
 	corGlassData <- cor(normalisedGlassData)
-	dev.new()
+	 
 	corrplot(corGlassData, method = "circle")
 }
 
@@ -378,7 +378,7 @@ showGroupingResults <- function (glassDataWithoutOutliers, normalisedGlassData, 
 }
 
 showClassificationTests <- function (classificationGlassData, learningGlassData){
-	dev.new()
+	 
 	pokaz_md_3d(classificationGlassData)
 	pokaz_md_3d(learningGlassData)
 
@@ -411,13 +411,12 @@ runAnalysis <- function (glassDataFilePath){
 	normalisedGlassData <- getNormalisedData(glassDataWithoutOutliers)
 	groupedGlassData <- getGroupedData(normalisedGlassData, 5)
 	
-	showGroupingResults(glassDataWithoutOutliers, normalisedGlassData, groupedGlassData)
+	#showGroupingResults(glassDataWithoutOutliers, normalisedGlassData, groupedGlassData)
 	
 	# ============ CLASSIFICATION ============
-	classificationGlassData <- getDataForClassification(groupedGlassData)
-	learningGlassData <- podziel_md(classificationGlassData, 0.7, 1)
+	#classificationGlassData <- getDataForClassification(groupedGlassData)
+	#learningGlassData <- podziel_md(classificationGlassData, 0.7, 1)
 	
-	showClassificationTests(classificationGlassData, learningGlassData)
+	#showClassificationTests(classificationGlassData, learningGlassData)
 }
 
-runAnalysis("szklo_B.mat")

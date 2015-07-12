@@ -16,62 +16,59 @@ namespace Zenon.R.WebApi.Controllers
         private static readonly CharacterDevice CharacterDevice = new CharacterDevice();
         private static readonly SymbolicExpressionToResultMapper Mapper = new SymbolicExpressionToResultMapper();
 
+        private readonly string _rScriptsPath;
         private static REngine _engine;
         public ServerRenderController()
         {
             if (_engine != null) return;
 
-            var path = @"C:\Program Files\R\R-3.2.1\bin\i386";
-            //var path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Libs/R/i386");
-            var rLibrariesDirectory = Path.Combine(path, "libraries");
-            //var rLibrariesDirectory = @"F:\Projects\Git\MscThesis\R\Zenon.R.WebApi\Libs\R\i386\libraries";
-            var rScriptsDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "RScripts");
-            REngine.SetDllDirectory(path);
+            var path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Libs\\R\\i386");
+            SetupEnvironmentPath(path);
 
-            _engine = REngine.CreateInstance(Guid.NewGuid().ToString());
-
-            // requires installation of R for windows
+            var rDllPath = Path.Combine(path, "R.dll").Replace('\\', '/');
+            var rLibrariesPath = Path.Combine(path, "libraries").Replace('\\', '/');
+            _engine = REngine.GetInstance(rDllPath);
+            _rScriptsPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "RScripts");
+               
             _engine.Initialize();
             _engine.Install(GraphicsDevice);
-            _engine.Evaluate(@".libPaths(""C:/Program Files/R/R-2.15.0/library"")");
+            _engine.Evaluate(string.Format(@".libPaths(""{0}"")", rLibrariesPath));
         }
 
         public string Get()
         {
             GraphicsDevice.ClearImages();
 
+            //var x = _engine.Evaluate("(0:12) * pi / 12").AsNumeric();
+            //_engine.SetSymbol("x", x);4
+            //var y = _engine.Evaluate("cos(x)").AsNumeric();
 
-            //foreach (string p in engine.Evaluate(".libPaths()").AsCharacter())
-            //{
-            //   var test = p;
-            //}
+            //_engine.Evaluate("library(stats)");
+            //var x = _engine.Evaluate("rnorm(100, mean=50, sd=10)").AsNumeric();
+            //var hist = _engine.GetSymbol("hist").AsFunction();
+            //_engine.SetSymbol("x", x);
+            //var result = _engine.Evaluate("hist(x, col=rgb(0,0,1,0.25))");//.AsNumeric();
 
 
-            var x = _engine.Evaluate("(0:12) * pi / 12").AsNumeric();
-            _engine.SetSymbol("x", x);
-            var y = _engine.Evaluate("cos(x)").AsNumeric();
-
-            //var bmi = engine.Evaluate(@"bmi <- rnorm(n=1000, m=24.2, sd=2.2)");
-            //var hist = engine.GetSymbol("hist").AsFunction();
-            _engine.SetSymbol("y", y);
-            //var result = _engine.Evaluate("hist(y)");
-            var result = _engine.Evaluate("hist(y, col=rgb(0,0,1,0.25))");//.AsNumeric();
-            //var result = _engine.Evaluate("hist(y, freq=FALSE, xlab=\"Body Mass Index\", main=\"Distribution of Body Mass Index\", col=\"lightgreen\", xlim=c(15,35),  ylim=c(0, .20))");//.AsNumeric();
-            //var result = _engine.Evaluate("hist(y, freq=FALSE, xlab=”Body Mass Index”, main=”Distribution of Body Mass Index”, col=”lightgreen”, xlim=c(15,35),  ylim=c(0, .20))");//.AsNumeric();
-
-            //var value = hist.Invoke(new[] { y });
-
-            //engine.Evaluate("library(R.matlab)");
-
-            //var explorationScriptPath = Path.Combine(rScriptsDirectory, "eksploracja.R");
-            //var evaluated = engine.Evaluate(string.Format("source('{0}')", explorationScriptPath));
-            //engine.Evaluate(@"library(R.matlab)");
-            //var rawGlassData = _engine.Evaluate(@"readMat(""szklo_B.mat"")");
+            var rScriptsDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "RScripts");
+            var explorationScriptPath = Path.Combine(rScriptsDirectory, "Zenon_Motyka_projekt_eksploracja_danych_kod.R").Replace('\\', '/');
+            var dataSourcePath = Path.Combine(rScriptsDirectory, "szklo_B.mat").Replace('\\', '/');
+            _engine.Evaluate(string.Format("source('{0}', chdir=T)", explorationScriptPath));
+            _engine.Evaluate(string.Format("runAnalysis('{0}')", dataSourcePath));
+            //var szkloMatPath = Path.Combine(rScriptsDirectory, "szklo_B.mat").Replace('\\', '/');
+            //var rawGlassData = _engine.Evaluate(string.Format(@"readMat(""{0}"")", szkloMatPath));
 
             var plots = GraphicsDevice.GetImages().Select(RenderSvg).ToList();
 
             return plots[0];
         }
+
+        protected override void Dispose(bool disposing)
+        {
+            //_engine.Dispose();
+            _engine = null;
+            base.Dispose(disposing);
+        } 
 
         private static string RenderSvg(SvgDocument image)
         {
@@ -94,6 +91,17 @@ namespace Zenon.R.WebApi.Controllers
             //    return stream.ToArray();
             //}
         }
-        
+
+        private static void SetupEnvironmentPath(string rDllDirectory)
+        {
+            var oldPath = System.Environment.GetEnvironmentVariable("PATH");
+            if (!Directory.Exists(rDllDirectory))
+            {
+                throw new DirectoryNotFoundException(string.Format(" R.dll not found in : {0}", rDllDirectory));
+            }
+
+            var newPath = string.Format("{0}{1}{2}", rDllDirectory, Path.PathSeparator, oldPath);
+            Environment.SetEnvironmentVariable("PATH", newPath);
+        }
     }
 }
