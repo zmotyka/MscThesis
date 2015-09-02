@@ -1,10 +1,10 @@
 {
-  "name": "OneHydra.Spa",
-  "description": "OneHydra HTML user interface",
-  "version": "2.34.0",
+  "name": "RAnalyse",
+  "description": "RAnalyse",
+  "version": "1.0.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/onehydra/OneSearch.Spa.git"
+    "url": ""
   },
   "devDependencies": {
     "bower-update": "0.0.4",

@@ -1,7 +1,7 @@
 {
-  "name": "OneHydra.Spa",
-  "description": "OneHydra HTML user interface",
-  "version": "2.34.0",
+  "name": "RAnalyse",
+  "description": "RAnalyse",
+  "version": "1.0.0",
   "ignore": [],
   "dependencies": {
     "jquery": "#1.11.1",

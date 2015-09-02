@@ -39,10 +39,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="app\app.module.js" />
-    <Content Include="app\core\apiProxy\_module.js" />
-    <Content Include="app\core\cache\htmlCacheBusterHttpInterceptor.js" />
-    <Content Include="app\core\cache\_module.js" />
-    <Content Include="app\core\common.js" />
     <Content Include="app\core\config.js" />
     <Content Include="app\core\constants.js" />
     <Content Include="app\core\exception\exception.js" />
@@ -53,9 +49,7 @@
     <Content Include="app\core\router\routeHelperConfig.js" />
     <Content Include="app\core\router\routeHelper.js" />
     <Content Include="app\core\router\_module.js" />
-    <Content Include="app\core\_configuration.js" />
     <Content Include="app\core\_module.js" />
-    <Content Include="app\core\apiProxy\_proxies.js" />
     <Content Include="app\css\badgets_labels.css">
       <DependentUpon>badgets_labels.less</DependentUpon>
     </Content>
@@ -218,10 +212,7 @@
     <Content Include="CodingConventions.txt" />
     <Content Include="gulpfile.js" />
     <Content Include="gulp\clean.js" />
-    <Content Include="gulp\artifact.js" />
-    <Content Include="gulp\apiProxy.js" />
     <Content Include="gulp\build.js" />
-    <Content Include="gulp\configuration.js" />
     <Content Include="gulp\bundle.js" />
     <Content Include="gulp\stylesBundle.js" />
     <Content Include="gulp\scriptsBundle.js" />
@@ -236,18 +227,6 @@
     <Content Include="gulp\fonts.js" />
     <Content Include="karma.conf.js" />
     <Content Include="lessCompile\index.css" />
-    <Content Include="tests\features\pageObjects\loginPage.js" />
-    <Content Include="tests\features\seo\pageReport\stepDefinitions\page-report-classification.js" />
-    <Content Include="tests\features\seo\pageReport\stepDefinitions\page-report-actual-data-formatting-steps.js" />
-    <Content Include="tests\features\seo\pageReport\stepDefinitions\page-report-drill-up.js" />
-    <Content Include="tests\features\seo\pageReport\stepDefinitions\page-report-drill-down-to-page-level.js" />
-    <Content Include="tests\features\seo\pageReport\stepDefinitions\page-report-drill-down.js" />
-    <Content Include="tests\mocks\pageReportClassificationData.js" />
-    <Content Include="tests\mocks\pageReportData.js" />
-    <Content Include="tests\mocks\loginResponse.js" />
-    <Content Include="tests\protractor.conf.js" />
-    <Content Include="tests\features\seo\pageReport\stepDefinitions\pageObjects\pageReportPage.js" />
-    <Content Include="tests\features\seo\pageReport\stepDefinitions\page-report-weekly-monthly-toggle.js" />
   </ItemGroup>
   <ItemGroup>
     <Content Include=".bowerrc" />
@@ -258,7 +237,6 @@
     <Content Include="package.json" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="app\nonAngular\thirdParty\" />
     <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
@@ -294,28 +272,10 @@
     <Content Include="app\css\modules\home.less" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="app\configuration.json" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="app\css\google-font.less" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\css\modules\page-report.less" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="tests\features\seo\pageReport\page-report-weekly-monthly-toggle.feature" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="tests\features\seo\pageReport\page-report-drill-down.feature" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="tests\features\seo\pageReport\page-report-drill-up.feature" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="tests\features\seo\pageReport\page-report-actual-data-formatting.feature" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="tests\features\seo\pageReport\page-report-classification.feature" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

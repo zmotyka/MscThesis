@@ -17,31 +17,14 @@
     core.config(configure);
     core.run(run);
 
-    function configure($httpProvider, $logProvider, $stateProvider, $urlRouterProvider, routeHelperConfigProvider, toastr, configuration) {
+    function configure($httpProvider, $logProvider, $stateProvider, $urlRouterProvider, routeHelperConfigProvider) {
 
         // You can only inject Providers (not instances)
         // into config blocks.
 
-        configureToastr();
         configureLogging();
         configureHttpProvider();
         configureRouting();
-
-        function configureToastr() {
-            toastr.options.positionClass = 'toast-top-right';
-            toastr.options.closeButton = true;
-            toastr.options.preventDuplicates = false;
-            toastr.options.onclick = null;
-            toastr.options.progressBar = true;
-            toastr.options.timeOut = 5000;
-            toastr.options.showDuration = 300;
-            toastr.options.hideDuration = 10;
-            toastr.options.extendedTimeOut = 1000;
-            toastr.options.showEasing = "swing";
-            toastr.options.hideEasing = "linear";
-            toastr.options.showMethod = "fadeIn";
-            toastr.options.hideMethod = "fadeOut";
-        }
 
         function configureLogging() {
             // turn debugging off/on (no info or warn)
