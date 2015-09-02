@@ -25,7 +25,6 @@
         watchedFiles.push(gulp.watch([paths.src.css + '*.less', paths.src.css + '**/*.less'], ['styles:bundle']));
         watchedFiles.push(gulp.watch([paths.src.js + '*.js', paths.src.js + '**/*.js'], ['scripts:bundle', 'copy:nonAngular']));
         watchedFiles.push(gulp.watch([paths.src.images + '*.*', paths.src.images + '**/*.*'], ['copy:images']));
-        watchedFiles.push(gulp.watch([paths.src.bower + '*.js', paths.src.bower + '**/*.js'], ['scripts:bundle']));
         watchedFiles.push(gulp.watch([paths.src.app + '*.html', paths.src.app + '**/*.html'], ['copy:html']));
 
         // Just to add log messages on Terminal, in case any file is changed

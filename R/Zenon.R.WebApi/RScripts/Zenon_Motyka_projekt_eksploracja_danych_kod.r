@@ -43,7 +43,7 @@ showMinMaxMeanSd <- function (rawData, glassData){
 
 showHistograms <- function (glassData){
 	# ============= Histogramy ======================
-	colors <- c("green")
+	colors <- c(rgb(0,0,1,0.25))
 	 
 	hist(glassData$ri, 60, col = colors)
 	 
@@ -420,3 +420,16 @@ runAnalysis <- function (glassDataFilePath){
 	#showClassificationTests(classificationGlassData, learningGlassData)
 }
 
+getHistogram <- function(glassDataFilePath){
+	rawGlassData <- readMat(glassDataFilePath)
+	glassData <- getMappedGlassData(rawGlassData)
+
+	return(hist(glassData$ri, plot=FALSE))
+}
+
+getGlassData <- function(glassDataFilePath){
+	rawGlassData <- readMat(glassDataFilePath)
+	glassData <- getMappedGlassData(rawGlassData)
+
+	return(glassData)
+}

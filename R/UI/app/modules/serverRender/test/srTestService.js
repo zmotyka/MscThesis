@@ -13,7 +13,7 @@
 
         function getData() {
             var request = {
-                url: 'http://localhost:51777/api/serverRender',
+                url: 'http://localhost:51777/api/serverRender/get',
                 method: 'GET'
             };
             return $http(request);

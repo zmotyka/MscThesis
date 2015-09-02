@@ -181,6 +181,10 @@
     <Content Include="app\img\spinner-navy-bg-16x16.gif" />
     <Content Include="app\img\patterns\header-profile.png" />
     <Content Include="app\img\patterns\shattered.png" />
+    <Content Include="app\modules\clientRender\scatterChart\crScatterChart.html" />
+    <Content Include="app\modules\clientRender\scatterChart\crScatterChartCtrl.js" />
+    <Content Include="app\modules\clientRender\scatterChart\crScatterChartService.js" />
+    <Content Include="app\modules\clientRender\scatterChart\_route.js" />
     <Content Include="app\modules\common\directives\layout\cm-layout-minimize-sidebar.html" />
     <Content Include="app\modules\common\directives\layout\cm-layout-minimize-sidebar.js" />
     <Content Include="app\modules\common\directives\layout\cm-layout-side-navigation.js" />
@@ -197,32 +201,13 @@
     <Content Include="app\modules\common\main\topnavbar.html" />
     <Content Include="app\modules\common\main\_route.js" />
     <Content Include="app\modules\common\_module.js" />
-    <Content Include="app\modules\seo\pageReport\grid\seoprDeltaClassProvider.js" />
-    <Content Include="app\modules\seo\pageReport\grid\_unitTests\seopr-page-report-date-range-toggle-tests.js" />
-    <Content Include="app\modules\seo\pageReport\seopr-page-report-selector.html" />
-    <Content Include="app\modules\seo\pageReport\seopr-page-report-selector.js" />
-    <Content Include="app\modules\seo\pageReport\grid\seoprGridDataSource.js" />
-    <Content Include="app\modules\seo\pageReport\grid\seoprGridHelper.js" />
-    <Content Include="app\modules\seo\pageReport\grid\seopr-page-report-grid.html" />
-    <Content Include="app\modules\seo\pageReport\grid\seopr-page-report-grid.js" />
-    <Content Include="app\modules\seo\pageReport\grid\seoprGridFactory.js" />
-    <Content Include="app\modules\seo\pageReport\grid\seopr-page-report-date-range-toggle.html" />
-    <Content Include="app\modules\seo\pageReport\grid\seopr-page-report-date-range-toggle.js" />
-    <Content Include="app\modules\seo\pageReport\grid\seoprGridDefinition.js" />
-    <Content Include="app\modules\seo\pageReport\seopr-page-report-breadcrumb.html" />
-    <Content Include="app\modules\seo\pageReport\seopr-page-report-breadcrumb.js" />
-    <Content Include="app\modules\seo\pageReport\seoprPageReport.html" />
-    <Content Include="app\modules\seo\pageReport\seoprPageReportCtrl.js" />
-    <Content Include="app\modules\seo\pageReport\seoprPageReportService.js" />
-    <Content Include="app\modules\seo\pageReport\seoprRequestAdapter.js" />
-    <Content Include="app\modules\seo\pageReport\seoprReportMode.js" />
-    <Content Include="app\modules\seo\pageReport\_route.js" />
-    <Content Include="app\modules\seo\pageReport\_unitTests\seoprRequestAdapterTests.js" />
-    <Content Include="app\modules\seo\home\home.html" />
-    <Content Include="app\modules\seo\home\_route.js" />
-    <Content Include="app\modules\seo\shell\shell.html" />
-    <Content Include="app\modules\seo\shell\_route.js" />
-    <Content Include="app\modules\seo\_module.js" />
+    <Content Include="app\modules\clientRender\shell\shell.html" />
+    <Content Include="app\modules\clientRender\shell\_route.js" />
+    <Content Include="app\modules\clientRender\test\crTest.html" />
+    <Content Include="app\modules\clientRender\test\crTestCtrl.js" />
+    <Content Include="app\modules\clientRender\test\crTestService.js" />
+    <Content Include="app\modules\clientRender\test\_route.js" />
+    <Content Include="app\modules\clientRender\_module.js" />
     <Content Include="app\modules\serverRender\test\srTest.html" />
     <Content Include="app\modules\serverRender\test\srTestCtrl.js" />
     <Content Include="app\modules\serverRender\test\srTestService.js" />
@@ -230,28 +215,7 @@
     <Content Include="app\modules\serverRender\shell\shell.html" />
     <Content Include="app\modules\serverRender\shell\_route.js" />
     <Content Include="app\modules\serverRender\_module.js" />
-    <Content Include="app\nonAngular\thirdParty\kendo\css\kendo.common.min.css" />
-    <Content Include="app\nonAngular\thirdParty\kendo\css\kendo.dataviz.default.min.css" />
-    <Content Include="app\nonAngular\thirdParty\kendo\css\kendo.dataviz.min.css" />
-    <Content Include="app\nonAngular\thirdParty\kendo\css\kendo.silver.min.css" />
-    <Content Include="app\nonAngular\thirdParty\kendo\css\kendo.silver.mobile.min.css" />
-    <Content Include="app\nonAngular\thirdParty\kendo\css\Silver\editor.png" />
-    <Content Include="app\nonAngular\thirdParty\kendo\css\Silver\imagebrowser.png" />
-    <Content Include="app\nonAngular\thirdParty\kendo\css\Silver\indeterminate.gif" />
-    <Content Include="app\nonAngular\thirdParty\kendo\css\Silver\loading-image.gif" />
-    <Content Include="app\nonAngular\thirdParty\kendo\css\Silver\loading.gif" />
-    <Content Include="app\nonAngular\thirdParty\kendo\css\Silver\loading_2x.gif" />
-    <Content Include="app\nonAngular\thirdParty\kendo\css\Silver\markers.png" />
-    <Content Include="app\nonAngular\thirdParty\kendo\css\Silver\markers_2x.png" />
-    <Content Include="app\nonAngular\thirdParty\kendo\css\Silver\slider-h.gif" />
-    <Content Include="app\nonAngular\thirdParty\kendo\css\Silver\slider-v.gif" />
-    <Content Include="app\nonAngular\thirdParty\kendo\css\Silver\sprite.png" />
-    <Content Include="app\nonAngular\thirdParty\kendo\css\Silver\sprite_2x.png" />
-    <Content Include="app\nonAngular\thirdParty\kendo\css\Silver\sprite_kpi.png" />
-    <Content Include="app\nonAngular\thirdParty\kendo\css\Silver\sprite_kpi_2x.png" />
-    <Content Include="app\nonAngular\thirdParty\kendo\js\kendo.all.min.js" />
     <Content Include="CodingConventions.txt" />
-    <Content Include="app\fav.ico" />
     <Content Include="gulpfile.js" />
     <Content Include="gulp\clean.js" />
     <Content Include="gulp\artifact.js" />
@@ -294,6 +258,7 @@
     <Content Include="package.json" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="app\nonAngular\thirdParty\" />
     <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>

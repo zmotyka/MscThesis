@@ -7,13 +7,13 @@
 
     function srTestCtrl(srTestService) {
         var vm = this;
-        vm.svgImg = '';
+        vm.svgImages = [];
 
         init();
 
         function init() {
             srTestService.getData().then(function (response) {
-                vm.svgImg = response.data;
+                vm.svgImages = response.data;
             });
         }
     }

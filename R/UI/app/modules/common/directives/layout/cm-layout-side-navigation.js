@@ -18,7 +18,7 @@
                 var navList = element.find('ul');
                 // Call the plugin and plug it to sidebar navigation
                 // hack: timeout without time specified - wait until the end of the $digest cycle
-                $timeout(function() {
+                $timeout(function () {
                     element.find('#nav-accordion').dcAccordion({
                         eventType: 'click',
                         autoClose: true,
@@ -31,14 +31,9 @@
                     });
 
                     // Minimalize menu when screen is less than 768px
-                    angular.element(window).bind("load resize", function () {
-                        if (angular.element(this).width() > 769) {
-                            angular.element('body').addClass('sidebar-close');
-                            navList.show();
-                        } else {
-                            angular.element('body').removeClass('sidebar-close');
-                            navList.hide();
-                        }
+                    setNavigationState(navList);
+                    angular.element(window).bind("resize", function () {
+                        setNavigationState(navList);
                     });
 
                     // hide menu when clicked on any leaf anchor
@@ -53,5 +48,14 @@
 
         return directive;
 
+        function setNavigationState(navList) {
+            if (window.innerWidth > 769) {
+                angular.element('body').addClass('sidebar-close');
+                navList.show();
+            } else {
+                angular.element('body').removeClass('sidebar-close');
+                navList.hide();
+            }
+        }
     }
 })(angular);
