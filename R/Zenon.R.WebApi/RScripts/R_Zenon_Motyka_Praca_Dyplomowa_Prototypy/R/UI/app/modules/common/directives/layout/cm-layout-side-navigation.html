@@ -1,0 +1,20 @@
+<aside>
+    <div id="sidebar" class="nav-collapse " tabindex="5000" style="overflow: hidden; outline: none; margin-left: 0px;">
+        <!-- sidebar menu start-->
+        <ul class="sidebar-menu" id="nav-accordion" style="display: block;">
+            <li ui-sref-active="active">
+                <a ui-sref="home"><i class="fa fa-dashboard"></i><span class="nav-label">Home</span> </a>
+            </li>
+            <li ui-sref-active="active" ng-class="{active: $state.includes('serverRender')}">
+                <a ui-sref="serverRender.test"><i class="fa fa-file"></i><span class="nav-label">Server Render</span></a>
+            </li>
+            <li ui-sref-active="active" ng-class="{active: $state.includes('clientRender.test')}">
+                <a ui-sref="clientRender.test"><i class="fa fa-file"></i><span class="nav-label">Client Render</span></a>
+            </li>
+            <li ui-sref-active="active" ng-class="{active: $state.includes('clientRender.scatterChart')}">
+                <a ui-sref="clientRender.scatterChart"><i class="fa fa-file"></i><span class="nav-label">Scatter Charts</span></a>
+            </li>
+        </ul>
+        <!-- sidebar menu end-->
+    </div>
+</aside>

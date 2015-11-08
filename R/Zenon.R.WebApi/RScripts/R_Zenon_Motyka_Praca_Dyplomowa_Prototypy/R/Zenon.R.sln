@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zenon.R.Web", "UI\Zenon.R.Web.csproj", "{F1FFB481-0416-403E-8280-3D8E2B80CA3A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zenon.R.WebApi", "Zenon.R.WebApi\Zenon.R.WebApi.csproj", "{B3381909-9E76-4B17-966A-BAEEF94773D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RDotNet", "..\..\rdotnet\R.NET\RDotNet.csproj", "{0923E1A0-2032-4997-AB73-49E42C4034A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RDotNet.Graphics", "..\..\rdotnet\RDotNet.Graphics\RDotNet.Graphics.csproj", "{BCADF6CF-2D63-4BD7-BC28-F0AC4F98AE78}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RDotNet.NativeLibrary", "..\..\rdotnet\RDotNet.NativeLibrary\RDotNet.NativeLibrary.csproj", "{2A089A59-0F22-4484-B442-0FE8BDA10879}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F1FFB481-0416-403E-8280-3D8E2B80CA3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1FFB481-0416-403E-8280-3D8E2B80CA3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1FFB481-0416-403E-8280-3D8E2B80CA3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1FFB481-0416-403E-8280-3D8E2B80CA3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3381909-9E76-4B17-966A-BAEEF94773D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3381909-9E76-4B17-966A-BAEEF94773D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3381909-9E76-4B17-966A-BAEEF94773D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3381909-9E76-4B17-966A-BAEEF94773D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0923E1A0-2032-4997-AB73-49E42C4034A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0923E1A0-2032-4997-AB73-49E42C4034A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0923E1A0-2032-4997-AB73-49E42C4034A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0923E1A0-2032-4997-AB73-49E42C4034A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCADF6CF-2D63-4BD7-BC28-F0AC4F98AE78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCADF6CF-2D63-4BD7-BC28-F0AC4F98AE78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCADF6CF-2D63-4BD7-BC28-F0AC4F98AE78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCADF6CF-2D63-4BD7-BC28-F0AC4F98AE78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A089A59-0F22-4484-B442-0FE8BDA10879}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A089A59-0F22-4484-B442-0FE8BDA10879}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A089A59-0F22-4484-B442-0FE8BDA10879}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A089A59-0F22-4484-B442-0FE8BDA10879}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

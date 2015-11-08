@@ -1,0 +1,39 @@
+{
+  "name": "angular-accounting",
+  "homepage": "https://github.com/millenjo/angular-accounting",
+  "authors": [
+    "millenjo <millenjo@gmail.com>"
+  ],
+  "description": "Accounting.js wrapper for Angular.js",
+  "main": "angular-accounting.js",
+  "moduleType": [
+    "amd",
+    "globals"
+  ],
+  "keywords": [
+    "accounting",
+    "accountingjs"
+  ],
+  "license": "MIT",
+  "private": false,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "accounting": "~0.3.2"
+  },
+  "_release": "4f001ed484",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "4f001ed484a0dd56cf7028ee512b81a4906b261b"
+  },
+  "_source": "git://github.com/millenjo/angular-accounting.git",
+  "_target": "*",
+  "_originalSource": "angular-accounting",
+  "_direct": true
+}

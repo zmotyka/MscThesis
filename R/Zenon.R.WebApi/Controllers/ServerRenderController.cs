@@ -14,13 +14,13 @@ namespace Zenon.R.WebApi.Controllers
         public IEnumerable<string> Get()
         {
             GraphicsDevice.ClearImages();
-
-            var explorationScriptPath = GetScriptAbsolutePath("Zenon_Motyka_projekt_eksploracja_danych_kod.R");
-            var dataSourcePath = GetScriptAbsolutePath("szklo_B.mat");
+            
+            var explorationScriptPath = GetScriptAbsolutePath("Zenon_Motyka_analiza_thoraric_surgery.R");
+            var dataSourcePath = GetScriptAbsolutePath("ThoraricSurgery.arff.txt");
             Engine.Evaluate(string.Format("source('{0}', chdir=T)", explorationScriptPath));
             Engine.Evaluate(string.Format("runAnalysis('{0}')", dataSourcePath));
 
-            var plots = GraphicsDevice.GetImages().Select(RenderSvg).ToList();
+            var plots = GraphicsDevice.GetImages().Select(RenderSvg).Distinct().ToList();
 
             return plots;
         }

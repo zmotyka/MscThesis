@@ -12,8 +12,9 @@ namespace Zenon.R.WebApi.Controllers
 
         public IEnumerable<HistogramDataEntry> GetHistogram()
         {
-            var explorationScriptPath = GetScriptAbsolutePath("Zenon_Motyka_projekt_eksploracja_danych_kod.R");
-            var dataSourcePath = GetScriptAbsolutePath("szklo_B.mat");
+            var explorationScriptPath = GetScriptAbsolutePath("Zenon_Motyka_analiza_thoraric_surgery.R");
+            var dataSourcePath = GetScriptAbsolutePath("ThoraricSurgery.arff.txt");
+            
             Engine.Evaluate(string.Format("source('{0}', chdir=T)", explorationScriptPath));
             var histData = Engine.Evaluate(string.Format("getHistogram('{0}')", dataSourcePath)).AsList();
             var mappedHistData = histData.Select(d => Mapper.Map(d)).ToArray();
@@ -29,12 +30,13 @@ namespace Zenon.R.WebApi.Controllers
 
         public IEnumerable<Point> GetScatterChart()
         {
-            var explorationScriptPath = GetScriptAbsolutePath("Zenon_Motyka_projekt_eksploracja_danych_kod.R");
-            var dataSourcePath = GetScriptAbsolutePath("szklo_B.mat");
+            var explorationScriptPath = GetScriptAbsolutePath("Zenon_Motyka_analiza_thoraric_surgery.R");
+            var dataSourcePath = GetScriptAbsolutePath("ThoraricSurgery.arff.txt");
+            
             Engine.Evaluate(string.Format("source('{0}', chdir=T)", explorationScriptPath));
-            Engine.Evaluate(string.Format("glassData <- getGlassData('{0}')", dataSourcePath));
-            var riData = Engine.Evaluate("glassData$ri").AsList();
-            var naData = Engine.Evaluate("glassData$na").AsList();
+            Engine.Evaluate(string.Format("mappedData <- readAndGetData('{0}')", dataSourcePath));
+            var riData = Engine.Evaluate("mappedData$age").AsList();
+            var naData = Engine.Evaluate("mappedData$fvc").AsList();
 
             var riDataArray = riData.Select(d => Mapper.Map(d).Values.Select(s => double.Parse(s)).First()).ToArray();
             var naDataArray = naData.Select(d => Mapper.Map(d).Values.Select(s => double.Parse(s)).First()).ToArray();

@@ -1,0 +1,279 @@
+﻿@import "../variables.less";
+
+@border-color: #dbdbde;
+@report-header-color: #EAEEF1;
+@font-color-gray: #555;
+@font-number-color: white;
+
+// conditional formatting of the cells
+
+.cell-value-not-available,
+.cell-value-no-change,
+.cell-value-rise,
+.cell-value-decline{
+    color: @font-number-color;
+}
+
+.cell-value-not-available {
+    background-color: @value-not-available-color;
+}
+
+.cell-value-no-change {
+    background-color: @value-no-change-color;
+}
+
+.cell-value-rise {
+    background-color: @value-rise-color;
+}
+
+.cell-value-decline {
+    background-color: @value-decline-color;
+}
+
+.cell-delta {
+    color: @delta-cell-text-color;
+}
+// neutral
+.cell-no-change-delta {
+    background-color: @delta-no-change;
+}
+// not available
+.cell-not-available-delta {
+    background-color: @delta-not-available;
+}
+
+// negative
+.cell-negative-delta-1 {
+    background-color: mix(@delta-negative, @delta-no-change, 10%);
+}
+
+.cell-negative-delta-2 {
+    background-color: mix(@delta-negative, @delta-no-change, 20%);
+}
+
+.cell-negative-delta-3 {
+    background-color: mix(@delta-negative, @delta-no-change, 30%);
+}
+
+.cell-negative-delta-4 {
+    background-color: mix(@delta-negative, @delta-no-change, 40%);
+}
+
+.cell-negative-delta-5 {
+    background-color: mix(@delta-negative, @delta-no-change, 50%);
+}
+
+.cell-negative-delta-6 {
+    background-color: mix(@delta-negative, @delta-no-change, 60%);
+}
+
+.cell-negative-delta-7 {
+    background-color: mix(@delta-negative, @delta-no-change, 70%);
+}
+
+.cell-negative-delta-8 {
+    background-color: mix(@delta-negative, @delta-no-change, 80%);
+}
+
+.cell-negative-delta-9 {
+    background-color: mix(@delta-negative, @delta-no-change, 90%);
+}
+
+.cell-negative-delta-10 {
+    background-color: mix(@delta-negative, @delta-no-change, 100%);
+}
+
+// positive
+.cell-positive-delta-1 {
+    background-color: mix(@delta-positive, @delta-no-change, 10%);
+}
+
+.cell-positive-delta-2 {
+    background-color: mix(@delta-positive, @delta-no-change, 20%);
+}
+
+.cell-positive-delta-3 {
+    background-color: mix(@delta-positive, @delta-no-change, 30%);
+}
+
+.cell-positive-delta-4 {
+    background-color: mix(@delta-positive, @delta-no-change, 40%);
+}
+
+.cell-positive-delta-5 {
+    background-color: mix(@delta-positive, @delta-no-change, 50%);
+}
+
+.cell-positive-delta-6 {
+    background-color: mix(@delta-positive, @delta-no-change, 60%);
+}
+
+.cell-positive-delta-7 {
+    background-color: mix(@delta-positive, @delta-no-change, 70%);
+}
+
+.cell-positive-delta-8 {
+    background-color: mix(@delta-positive, @delta-no-change, 80%);
+}
+
+.cell-positive-delta-9 {
+    background-color: mix(@delta-positive, @delta-no-change, 90%);
+}
+
+.cell-positive-delta-10 {
+    background-color: mix(@delta-positive, @delta-no-change, 100%);
+}
+
+@media (min-width: 480px) {
+    .page-report-container {
+        margin: 0px 10px;
+    }
+}
+
+.page-report-grid.k-grid {
+    border: none;
+
+    tr {
+        &:not(.k-footer-template) td {
+            padding: 0px !important;
+        }
+
+        td {
+            .page-name {
+                padding: 18px;
+                overflow: hidden;
+                white-space: nowrap;
+                -ms-text-overflow: ellipsis;
+                -o-text-overflow: ellipsis;
+                text-overflow: ellipsis;
+                font-weight: normal;
+                font-size: 1.2em;
+                a{
+                    color: @font-color-gray;
+                }
+            }
+
+            .numeric {
+                border-right: 1px solid #FFF;
+                border-bottom: 1px solid #FFF;
+                height: 80px;
+                padding: 0px 8px 0px 2px;
+
+                .delta-value {
+                    padding: 20px 0px 0px 10px;
+                    font-size: 1.8em;
+                    font-family: 'Cuprum';
+                    font-weight: 400;
+                }
+
+                .actual-value {
+                    padding: 4px 0px 0px 10px;
+                }
+            }
+        }
+
+        &:hover {
+            background: #eee;
+        }
+
+        &.k-footer-template {
+            td {
+                padding: 0px !important;
+                font-weight: normal;
+
+                &:first-child { // name column
+                    vertical-align: top;
+
+                    .summary-footer {
+                        padding: 12px;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+
+    .k-header.k-grid-toolbar {
+        background-color: transparent;
+        border: none;
+        padding: 0;
+
+        h2.current-group-title a {
+            white-space: normal;
+            color: #555;
+        }
+
+        .kendo-ui-grid-settings {
+            color: #808890;
+
+            .k-header-column-menu {
+                span {
+                    width: 0px;
+                    visibility: hidden;
+                }
+            }
+        }
+    }
+
+    .k-grid-header {
+        background-color: @report-header-color;
+
+        .k-grid-header-wrap {
+            border-bottom: 1px solid white;
+        }
+
+        .k-header {
+            background-color: @report-header-color;
+            padding: 15px 12px;
+            border-top: none;
+            border-bottom: none;
+        }
+
+        th.k-header {
+            border-right: 1px solid white;
+            border-left: none;
+
+            .k-link {
+                font-weight: bold;
+                color: #808890;
+            }
+        }
+    }
+
+    .k-grid-footer {
+        /*border-top: 1px solid white;*/
+        background-color: @report-header-color;
+
+        .k-footer-template {
+            td {
+                background-color: @report-header-color;
+                border-top: 1px solid white;
+                border-right: 1px solid white;
+                border-left: none;
+            }
+        }
+    }
+
+    .k-grid-header,
+    .k-grid-content,
+    .k-grid-footer {
+        border: none;
+    }
+}
+
+.report-selector {
+    margin: 0;
+
+    & > li.dropdown {
+        & > a {
+            background-color: @navy !important;
+            color: #FFF;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .report-breadcrumb {
+        margin: 0;
+    }
+}

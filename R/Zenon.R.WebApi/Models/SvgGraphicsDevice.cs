@@ -265,10 +265,12 @@ namespace Zenon.R.WebApi.Models
 
         public void OnNewPageRequested(GraphicsContext context, DeviceDescription description)
         {
+            var boundaries = description.ClipBounds;
             _currentImage = new SvgDocument
             {
                 Width = new SvgUnit(SvgUnitType.Pixel, _mapper.Height),
-                Height = new SvgUnit(SvgUnitType.Pixel, _mapper.Width)
+                Height = new SvgUnit(SvgUnitType.Pixel, _mapper.Width),
+                ViewBox = new SvgViewBox((float)boundaries.Left, (float)boundaries.Bottom, (float)boundaries.Right, (float)boundaries.Top)
             };
 
             _images.Add(_currentImage);
@@ -276,7 +278,8 @@ namespace Zenon.R.WebApi.Models
 
         public Rectangle OnResized(DeviceDescription description)
         {
-            throw new NotImplementedException();
+            return description.ClipBounds;
+            //throw new NotImplementedException();
         }
 
         public void OnClosed(DeviceDescription description)

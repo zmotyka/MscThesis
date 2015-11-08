@@ -1,0 +1,95 @@
+@import "variables.less";
+
+html, body, .login-page {
+    height: 100%;
+    width: 100%;
+}
+
+.login-page {
+    position: absolute;
+}
+
+// style used by cm-access-disable directive
+.disabled {
+    cursor: default;
+    pointer-events: none;
+    text-decoration: none;
+}
+
+// style used by cm-access-hide directive
+.visibility-hidden {
+    visibility: hidden !important;
+}
+
+// style for FOUC - Flash of Uncompiled Content
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
+}
+
+.loading-page {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    z-index: 1999; /* as pace has 2000 */
+}
+
+.spin-icon {
+    background: @navy;
+    position: absolute;
+    padding: 7px 10px 7px 13px;
+    -moz-border-radius: 20px 0px 0px 20px;
+    -webkit-border-radius: 20px 0px 0px 20px;
+    border-radius: 20px 0px 0px 20px;
+    font-size: 16px;
+    top: 0;
+    left: 0px;
+    width: 40px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.small-spinner {
+    position: absolute;
+    right: 10px;
+    background: url('../img/spinner-navy-bg-16x16.gif');
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+}
+
+// animated first view
+.view-animate {
+    height: 100%; // fix for Android mobile phones with overlays
+    &.ng-enter {
+        -moz-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+        -o-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+        -webkit-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+        transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+        opacity: 0;
+
+        &.ng-enter-active {
+            opacity: 1;
+        }
+    }
+
+    &.ng-leave.ng-leave-active {
+        opacity: 1;
+    }
+}
+
+
+.logo {
+    font-size: 24px;
+    color: #f2f2f2;
+    float: left;
+    margin-top: 14px;
+    text-transform: uppercase;
+
+    .navy{
+        color: darken(@navy, 10%);
+    }
+}
